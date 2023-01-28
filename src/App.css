@@ -10,17 +10,21 @@
 
 .header {
   display: flex;
-  justify-content: center;
   align-items: center;
   color: white;
-  padding: 20px;
+  padding: 20px 100px;
   background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
 }
 
 .header-image {
-  margin-top: 3px;
+  margin: 3px 4px 0 0;
 }
+
 .header-text {
-  font-size: 25px;
-  margin-right: 200px;
+  font-size: 20px;
+  margin-right: auto;
+}
+
+.header-subtext {
+  font-size: 16px;
 }
