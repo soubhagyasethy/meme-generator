@@ -1,11 +1,12 @@
 
 export default function Meme() {
     return(
-        <div className="meme">
-            <input className="input" />
-            <input className="input" />
+        <main className="main">
+            <div className="meme">
+            <input className="input" type="text"  placeholder="top text"/>
+            <input className="input" type="text" placeholder="bottom text"/>
             <button className="button">Get a new meme image</button>
-            
-        </div>
+            </div>
+        </main>
     )
 }
