@@ -20,16 +20,17 @@
 }
 
 .header-image {
+  height: 1.5em;
   margin: 0.2em 0.25em 0 0;
 }
 
 .header-text {
-  font-size: 1.25 em;
+  font-size: 1.25em;
   margin-right: auto;
 }
 
 .header-subtext {
-  font-size: 0.938 em;
+  font-size: 0.938em;
 }
 
 /* style the main */
