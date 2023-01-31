@@ -9,7 +9,6 @@ export default function Meme() {
         const memesArray = memeData.data.memes;
         const randomNumber = Math.floor(Math.random() * memesArray.length);
         const randomUrl = memesArray[randomNumber].url;
-        console.log(randomUrl);
         setMemeImage(randomUrl);
 
     }
