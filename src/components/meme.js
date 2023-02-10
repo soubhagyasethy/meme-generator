@@ -1,6 +1,4 @@
-import {useState} from "react";
-import memeData from "../memesData"
-
+import {useState, useEffect} from "react";
 
 export default function Meme() {
 
@@ -10,27 +8,34 @@ export default function Meme() {
         randomUrl: "https://i.imgflip.com/30b1gx.jpg"
     })
 
-    console.log(meme);
+    const [allmemes, setAllMemes] = useState([]);
 
-    function onChangeHandler(event) {
-        const {name, value} = event.target;
-        setMeme((prevSetMeme) => ({
-            ...prevSetMeme,
-            [name]: value
-        }))
-    }
+    useEffect( () => {
+        fetch("https://api.imgflip.com/get_memes")
+        .then(res => res.json())
+        .then(data => setAllMemes(data.data.memes))
+    }, [])
+
     function clickHandler() {
-        const memesArray = memeData.data.memes;
-        const randomNumber = Math.floor(Math.random() * memesArray.length);
-        const randomUrl = memesArray[randomNumber].url;
-        setMeme((prevSetMeme) => ({
+        const randomNumber = Math.floor(Math.random() * allmemes.length);
+        const randomUrl = allmemes[randomNumber].url;
+        setMeme(prevSetMeme => ({
             ...prevSetMeme,
             topText: "",
             bottomText: "",
             randomUrl
-        }));
-
+        }))
     }
+
+    function onChangeHandler(event) {
+        const {name, value} = event.target;
+        setMeme(prevSetMeme => ({
+            ...prevSetMeme,
+            [name]: value
+        }))
+    }
+
+
     return(
         <main className="main">
             <div className="meme">
@@ -64,7 +69,6 @@ export default function Meme() {
                 <h2 className="meme-text bottom">{meme.bottomText}</h2>
             </div>
 
-            
         </main>
     )
 }
