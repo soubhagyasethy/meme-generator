@@ -5,15 +5,21 @@ export default function Meme() {
     const [meme, setMeme] = useState({
         topText: "",
         bottomText: "",
-        randomUrl: "https://i.imgflip.com/30b1gx.jpg"
+        randomUrl: "http://i.imgflip.com/1bij.jpg"
     })
 
     const [allmemes, setAllMemes] = useState([]);
 
     useEffect( () => {
-        fetch("https://api.imgflip.com/get_memes")
-        .then(res => res.json())
-        .then(data => setAllMemes(data.data.memes))
+        // fetch("https://api.imgflip.com/get_memes")
+        // .then(res => res.json())
+        // .then(data => setAllMemes(data.data.memes))
+        async function getMemes() {
+            const res = await fetch("");
+            const data = await res.json();
+            setAllMemes(data.data.memes)
+        }
+        getMemes()
     }, [])
 
     function clickHandler() {
