@@ -43,4 +43,4 @@ If you encounter any issues or have questions, feel free to open an issue on the
 
 ### Support
 
-For any issues or questions regarding the stopwatch, please open a GitHub issue.
+For any issues or questions regarding this web app, please open a GitHub issue.
